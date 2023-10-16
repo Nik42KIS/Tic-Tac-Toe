@@ -15,17 +15,20 @@ header{
 .game{
     display: grid;
     height: 100vh;
-    grid-template-columns: repeat(3,80px);
-    grid-template-rows: repeat(3,80px);
+    grid-template-columns: repeat(3,120px);
+    grid-template-rows: repeat(3,120px);
     justify-content: center;
     align-content: center;
 }
 
 .cell{
-    height: 70px;
-    width: 70px;
-    background-color: red;
-    font-size: 3rem;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(72, 34, 34);
+    font-size: 4rem;
     color: blue;
     font-style: bold;
+    display: grid;
+    align-content: center;
+    justify-content: center;
 }
