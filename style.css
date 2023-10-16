@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 1px solid black;
+
+}
+
+header{
+    background-color: aquamarine;
+    height: 150px;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.game{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(3,80px);
+    grid-template-rows: repeat(3,80px);
+    justify-content: center;
+    align-content: center;
+}
+
+.cell{
+    height: 70px;
+    width: 70px;
+    background-color: red;
+    font-size: 3rem;
+    color: blue;
+    font-style: bold;
+}
