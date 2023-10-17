@@ -29,9 +29,29 @@ const gameBoard = (()=> {
             }
         })
    
-        // cell.textContent = el
     })
 
 
+        return {board}
+})()
 
+const gameController = (function(){
+
+    players = [
+        playerFirst = {
+            value: 'O' 
+        }, 
+        playerSecond = {
+            value: 'X'
+        },
+    ];
+
+    const activePlayer = players[0];
+    const changeActivePlayer = ()=>{
+        activePlayer = activePlayer === players[0] ? players[1] : players[0];
+        const getActivePlayer = () => activePlayer
+        return getActivePlayer
+    }
+
+    return { changeActivePlayer }
 })()

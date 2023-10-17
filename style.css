@@ -1,12 +1,16 @@
 *{
     margin: 0;
     padding: 0;
-    outline: 1px solid black;
+    outline: 2px solid white;
 
 }
 
+body{
+    background-color: rgba(0, 0, 0, 0.729);
+}
+
 header{
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.763);
     height: 150px;
     font-size: 5rem;
     text-align: center;
