@@ -20,8 +20,6 @@ const gameBoard = (()=> {
             wrap.appendChild(cell);
             cell.addEventListener('click', (e) =>{
     
-              
-                // flag ? e.target.textContent = 'X' flag = !flag : e.target.textContent = 'O'
                 if(flag && e.target.textContent == ''){
                     e.target.textContent = 'X';
                      flag = !flag
