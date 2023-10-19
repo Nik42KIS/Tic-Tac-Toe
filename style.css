@@ -1,13 +1,14 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     outline: 2px solid white;
 
 }
-
 body{
     background-color: rgba(0, 0, 0, 0.729);
-}
+} */
+/* 
+
 
 header{
     background-color: rgba(127, 255, 212, 0.763);
@@ -35,4 +36,27 @@ header{
     display: grid;
     align-content: center;
     justify-content: center;
-}
+} */
+
+.board {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 1px solid black;
+    gap: 2px;
+    padding: 2px;
+    background-color: yellow;
+  }
+  
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    border: 1px solid grey;
+    background: lightyellow;
+    cursor: pointer;
+  }
