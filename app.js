@@ -150,9 +150,9 @@ function Gameboard() {
       const boardData = game.getBoard();
       const activePlayer = game.getActivePlayer();
   
-      playerTurnDiv.textContent = game.checkForWinner()
-        ? `${activePlayer.name}'s turn.`
-        : "It's a tie!";
+    //   playerTurnDiv.textContent = game.checkForWinner()
+    //     ? `${activePlayer.name}'s turn.`
+    //     : "It's a tie!";
   
       for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 3; col++) {
