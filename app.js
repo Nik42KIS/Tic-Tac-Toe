@@ -40,7 +40,6 @@ function Gameboard() {
     const getValue = () => value;
   
     return {
-      restart,
       addToken,
       getValue,
     };
