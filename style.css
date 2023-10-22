@@ -1,21 +1,8 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    outline: 2px solid white;
-
-}
-body{
-    background-color: rgba(0, 0, 0, 0.729);
-} */
+/* 
 /* 
 
 
-header{
-    background-color: rgba(127, 255, 212, 0.763);
-    height: 150px;
-    font-size: 5rem;
-    text-align: center;
-}
+
 
 .game{
     display: grid;
@@ -37,17 +24,41 @@ header{
     align-content: center;
     justify-content: center;
 } */
-
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:Beige ;
+    color: rgba(0, 0, 0, 0.808);
+} 
+header{
+    background-color: red;
+    height: 100px;
+    font-size: 5rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.808);
+    
+}
+.container{
+    display: grid;
+    align-items: content;
+    justify-content: center;
+    height: calc(100vh - 100px);
+}
 .board {
     display: grid;
     height: 500px;
     width: 500px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    border: 1px solid black;
-    gap: 2px;
-    padding: 2px;
-    background-color: yellow;
+    /* border: 1px solid black; */
+    gap: 1px;
+    /* padding: 2px; */
+    /* background-color: yellow; */
+  }
+  .turn{
+    margin-top: 30px;
   }
   
   .cell {
@@ -55,8 +66,11 @@ header{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 2rem;
-    border: 1px solid grey;
-    background: lightyellow;
+    font-size: 4rem;
+    border: none;
+    color: red;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* border: 1px solid grey; */
+    /* background: lightyellow; */
     cursor: pointer;
   }
