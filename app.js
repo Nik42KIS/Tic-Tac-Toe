@@ -2,14 +2,15 @@ function Gameboard() {
     const rows = 3;
     const columns = 3;
     const board = [];
-  
+    const reset = document.querySelector('.reset') ;
+
     for (let i = 0; i < rows; i++) {
       board[i] = [];
       for (let j = 0; j < columns; j++) {
         board[i][j] = Cell();
       }
     }
-  
+
     const getBoard = () => board;
   
     const dropToken = (row, col, player) => {
@@ -39,6 +40,7 @@ function Gameboard() {
     const getValue = () => value;
   
     return {
+      restart,
       addToken,
       getValue,
     };
@@ -110,9 +112,10 @@ function Gameboard() {
       const winner = checkForWinner();
       const playerTurnDiv = document.querySelector('.turn');
       if (winner) {
-        if (winner === 'Tie') {
+        if (!winner ) {
           playerTurnDiv.textContent = "It's a tie!";
         } else {
+
           playerTurnDiv.textContent = `${winner} wins!`;
         }
       } else {
@@ -144,7 +147,9 @@ function Gameboard() {
     const game = GameController();
     const playerTurnDiv = document.querySelector('.turn');
     const boardDiv = document.querySelector('.board');
-  
+    const restart = document.querySelector('.reset');
+
+
     const updateScreen = () => {
       boardDiv.innerHTML = '';
       const boardData = game.getBoard();

@@ -1,44 +1,23 @@
-/* 
-/* 
 
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;700&display=swap');
 
-
-
-.game{
-    display: grid;
-    height: 100vh;
-    grid-template-columns: repeat(3,120px);
-    grid-template-rows: repeat(3,120px);
-    justify-content: center;
-    align-content: center;
-}
-
-.cell{
-    height: 100px;
-    width: 100px;
-    background-color: rgb(72, 34, 34);
-    font-size: 4rem;
-    color: blue;
-    font-style: bold;
-    display: grid;
-    align-content: center;
-    justify-content: center;
-} */
 *{
     margin: 0;
     padding: 0;
+    --text-color : white;
+    font-family: Playpen Sans, sans-serif;
 }
 body{
-    background-color:Beige ;
+    background-color:rgb(52, 52, 52) ;
     color: rgba(0, 0, 0, 0.808);
 } 
 header{
-    background-color: red;
-    height: 100px;
+    background-color: rgb(218, 0, 0);
+    height: 120px;
     font-size: 5rem;
     text-align: center;
-    color: rgba(0, 0, 0, 0.808);
-    
+    color: var(--text-color);
+    font-weight: 700;
 }
 .container{
     display: grid;
@@ -53,12 +32,13 @@ header{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     /* border: 1px solid black; */
-    gap: 1px;
+    gap: 2px;
     /* padding: 2px; */
     /* background-color: yellow; */
   }
   .turn{
     margin-top: 30px;
+    color: var(--text-color)
   }
   
   .cell {
@@ -66,11 +46,17 @@ header{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 4rem;
+    font-size: 7rem;
     border: none;
     color: red;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 227, 227, 0.2);
     /* border: 1px solid grey; */
     /* background: lightyellow; */
     cursor: pointer;
+    transition: ease-in-out 0.3s;
+  }
+  .cell:hover{
+    scale: 0.9;
+    border-radius: 5px;
+
   }
