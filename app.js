@@ -123,12 +123,7 @@ function GameBoard() {
       const winner = checkForWinner();
       const playerTurnDiv = document.querySelector('.turn');
       if (winner) {
-        if (!winner ) {
-          playerTurnDiv.textContent = "It's a tie!";
-        } else {
-
           playerTurnDiv.textContent = `${winner} wins!`;
-        }
       } else {
         playerTurnDiv.textContent = `${getActivePlayer().name}'s turn.`;
       }
@@ -164,16 +159,16 @@ function GameBoard() {
       boardDiv.innerHTML = '';
       const boardData = game.getBoard();
       const activePlayer = game.getActivePlayer();
-  
-    //   playerTurnDiv.textContent = game.checkForWinner()
-    //     ? `${activePlayer.name}'s turn.`
-    //     : "It's a tie!";
+     console.log(gameBoard.printBoard()); 
+        // playerTurnDiv.textContent = game.checkForWinner()
+        //   ? `${activePlayer.name}'s turn.`
+        //   : "It's a tie!";
+
+
       reset.addEventListener('click', () =>{
-        // console.log(gameBoard)
-        // gameBoard.restart()
-        // updateScreen();
         ScreenController() 
       })
+      
       for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 3; col++) {
           const cell = boardData[row][col];

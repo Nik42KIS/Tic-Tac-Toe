@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Tic-Tac-Toe</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <header>Tic Tac Toe</header>
+    <div class="form_wrap">
+      <form action="#">
+        <div class="input_wrap1">
+          <label for="first_player">Player 1</label>
+          <input id="first_player" type="text" />
+        </div>
+        <div class="input_wrap2">
+          <label for="second_player">Player 2</label>
+          <input id="second_player" type="text" />
+        </div>
+
+        <button class="add_btn">Add players</button>
+      </form>
+    </div>
+
     <div class="container">
+      <button class="reset_btn"><img src="./images/rotate.png" alt="restart" /></button>
+
       <h1 class="turn">Player One's turn.</h1>
       <div class="board"></div>
-      <button class="reset_btn">Restart</button>
     </div>
     <script src="app.js"></script>
   </body>
