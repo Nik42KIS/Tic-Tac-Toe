@@ -1,8 +1,8 @@
-function Gameboard() {
+function GameBoard() {
     const rows = 3;
     const columns = 3;
-    const board = [];
-    const reset = document.querySelector('.reset') ;
+    let board = [];
+ 
 
     for (let i = 0; i < rows; i++) {
       board[i] = [];
@@ -26,10 +26,22 @@ function Gameboard() {
       const boardWithCellValues = board.map((row) => row.map((cell) => cell.getValue()));
       console.log(boardWithCellValues);
     };
-  
-    return { getBoard, dropToken, printBoard };
+    const restart = () =>{
+      GameBoard()
+      // console.log(board)
+      // board = [];
+      // console.log(board)
+      // for (let i = 0; i < rows; i++) {
+      //   board[i] = [];
+      //   for (let j = 0; j < columns; j++) {
+      //     board[i][j] = Cell();
+      //   }
+      // }
+      // console.log(board)
+    }
+    return { getBoard, dropToken, printBoard, restart, };
   }
-  
+
   function Cell() {
     let value = '';
   
@@ -46,7 +58,7 @@ function Gameboard() {
   }
   
   function GameController(playerOneName = 'Player One', playerTwoName = 'Player Two') {
-    const board = Gameboard();
+    const board = GameBoard();
   
     const players = [
       {
@@ -146,9 +158,8 @@ function Gameboard() {
     const game = GameController();
     const playerTurnDiv = document.querySelector('.turn');
     const boardDiv = document.querySelector('.board');
-    const restart = document.querySelector('.reset');
-
-
+    const reset = document.querySelector('.reset_btn') ;
+    const gameBoard = GameBoard()
     const updateScreen = () => {
       boardDiv.innerHTML = '';
       const boardData = game.getBoard();
@@ -157,7 +168,12 @@ function Gameboard() {
     //   playerTurnDiv.textContent = game.checkForWinner()
     //     ? `${activePlayer.name}'s turn.`
     //     : "It's a tie!";
-  
+      reset.addEventListener('click', () =>{
+        // console.log(gameBoard)
+        // gameBoard.restart()
+        // updateScreen();
+        ScreenController() 
+      })
       for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 3; col++) {
           const cell = boardData[row][col];

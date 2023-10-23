@@ -10,7 +10,7 @@
 body{
     background-color:rgb(52, 52, 52) ;
     color: rgba(0, 0, 0, 0.808);
-    overflow: hidden;
+    /* overflow: hidden; */
 } 
 header{
     background-color: rgb(218, 0, 0);
