@@ -153,6 +153,7 @@ function GameBoard() {
       getActivePlayer,
       getBoard: board.getBoard,
       checkForWinner,
+      printNewRound,
       setPlayers,
     };
   }
@@ -175,14 +176,15 @@ function GameBoard() {
         // playerTurnDiv.textContent = game.checkForWinner()
         //   ? `${activePlayer.name}'s turn.`
         //   : "It's a tie!";
-      addBtn.addEventListener('click', () =>{
-  
-        
-        game.setPlayers(firstInput.value, secondInput.value);
-      })
+     
   
     reset.addEventListener('click', () =>{
         ScreenController() 
+      })
+      addBtn.addEventListener('click', () =>{
+ game.setPlayers(firstInput.value, secondInput.value);
+ game.printNewRound()
+       
       })
       
       for (let row = 0; row < 3; row++) {
