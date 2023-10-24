@@ -26,20 +26,8 @@ function GameBoard() {
       const boardWithCellValues = board.map((row) => row.map((cell) => cell.getValue()));
       console.log(boardWithCellValues);
     };
-    const restart = () =>{
-      GameBoard()
-      // console.log(board)
-      // board = [];
-      // console.log(board)
-      // for (let i = 0; i < rows; i++) {
-      //   board[i] = [];
-      //   for (let j = 0; j < columns; j++) {
-      //     board[i][j] = Cell();
-      //   }
-      // }
-      // console.log(board)
-    }
-    return { getBoard, dropToken, printBoard, restart, };
+
+    return { getBoard, dropToken, printBoard, };
   }
 
   function Cell() {
@@ -122,19 +110,36 @@ function GameBoard() {
       ) {
         return boardData[0][2].getValue();
       }
-  
+
+  //tie condition 
+ if (
+        boardData[0][0].getValue() !== '' &&
+        boardData[0][1].getValue() !== '' &&
+        boardData[0][2].getValue() !== '' &&
+        boardData[1][0].getValue() !== '' &&
+        boardData[1][1].getValue() !== '' &&
+        boardData[1][2].getValue() !== '' &&
+        boardData[2][0].getValue() !== '' &&
+        boardData[2][1].getValue() !== '' &&
+        boardData[2][2].getValue() !== '' 
+         ) {
+        return 'draw'
+      }
       return null;
     };
   
     const printNewRound = () => {
       const winner = checkForWinner();
       const playerTurnDiv = document.querySelector('.turn');
-      if (winner) {
-          playerTurnDiv.textContent = `${winner} wins!`;
-      } else {
+      if (winner === 'draw') {
+          playerTurnDiv.textContent = "It's a tie!";
+      } else if (winner) {
+        playerTurnDiv.textContent = `${winner} wins!`;
+    } 
+      else {
         playerTurnDiv.textContent = `${getActivePlayer().name}'s turn.`;
       }
-    };
+    }; 
   
     const playRound = (row, col) => {
       if (checkForWinner() || board.getBoard()[row][col].getValue() !== '') {
@@ -176,7 +181,7 @@ function GameBoard() {
         // playerTurnDiv.textContent = game.checkForWinner()
         //   ? `${activePlayer.name}'s turn.`
         //   : "It's a tie!";
-     
+        gameBoard.printBoard()
   
     reset.addEventListener('click', () =>{
         ScreenController() 

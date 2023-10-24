@@ -63,7 +63,7 @@ header{
     /* border: 1px solid grey; */
     /* background: lightyellow; */
     cursor: pointer;
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.2s;
   }
   .cell:hover{
     scale: 0.9;
@@ -84,6 +84,7 @@ header{
    grid-row:1/2;
    justify-self: end;
    margin-right: 3rem;
+   /* transition: all 0.2s; */
 }
 .reset_btn:hover{
 opacity: 1;
@@ -141,6 +142,7 @@ label{
   border-radius: 20px;
   border: none;
   opacity: 0.8;
+  transition: ease-in-out 0.2s;
 }
 
 .add_btn:hover{
