@@ -70,7 +70,14 @@ function GameBoard() {
         token: 'O',
       },
     ];
-  
+    const setPlayers = (p1, p2) =>{
+      players[0].name = p1;
+      
+
+     
+      players[1].name = p2;
+
+    }
     let activePlayer = players[0];
   
     const switchPlayerTurn = () => {
@@ -146,6 +153,7 @@ function GameBoard() {
       getActivePlayer,
       getBoard: board.getBoard,
       checkForWinner,
+      setPlayers,
     };
   }
   
@@ -154,18 +162,26 @@ function GameBoard() {
     const playerTurnDiv = document.querySelector('.turn');
     const boardDiv = document.querySelector('.board');
     const reset = document.querySelector('.reset_btn') ;
-    const gameBoard = GameBoard()
+    const addBtn = document.querySelector('.add_btn');
+    const firstInput = document.getElementById('first_player');
+    const secondInput = document.getElementById('second_player');
+    const gameBoard = GameBoard();
+
+    
     const updateScreen = () => {
       boardDiv.innerHTML = '';
       const boardData = game.getBoard();
       const activePlayer = game.getActivePlayer();
-     console.log(gameBoard.printBoard()); 
         // playerTurnDiv.textContent = game.checkForWinner()
         //   ? `${activePlayer.name}'s turn.`
         //   : "It's a tie!";
-
-
-      reset.addEventListener('click', () =>{
+      addBtn.addEventListener('click', () =>{
+  
+        
+        game.setPlayers(firstInput.value, secondInput.value);
+      })
+  
+    reset.addEventListener('click', () =>{
         ScreenController() 
       })
       
